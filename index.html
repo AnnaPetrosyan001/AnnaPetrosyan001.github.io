@@ -28,6 +28,158 @@ hello
         }
         
     </style>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Work',     11],
+          ['Eat',      2],
+          ['Commute',  2],
+          ['Watch TV', 2],
+          ['Sleep',    7]
+        ]);
+
+        var options = {
+          title: 'My Daily Activities'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Work',     11],
+          ['Eat',      2],
+          ['Commute',  2],
+          ['Watch TV', 2],
+          ['Sleep',    7]
+        ]);
+
+        var options = {
+          title: 'My Daily Activities',
+          is3D: true,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        chart.draw(data, options);
+      }
+    </script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Work',     11],
+          ['Eat',      2],
+          ['Commute',  2],
+          ['Watch TV', 2],
+          ['Sleep',    7]
+        ]);
+
+        var options = {
+          title: 'My Daily Activities',
+          pieHole: 0.4,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        chart.draw(data, options);
+      }
+    </script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Language', 'Speakers (in millions)'],
+          ['German',  5.85],
+          ['French',  1.66],
+          ['Italian', 0.316],
+          ['Romansh', 0.0791]
+        ]);
+
+      var options = {
+        legend: 'none',
+        pieSliceText: 'label',
+        title: 'Swiss Language Use (100 degree rotation)',
+        pieStartAngle: 100,
+      };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        chart.draw(data, options);
+      }
+    </script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Language', 'Speakers (in millions)'],
+          ['Assamese', 13], ['Bengali', 83], ['Bodo', 1.4],
+          ['Dogri', 2.3], ['Gujarati', 46], ['Hindi', 300],
+          ['Kannada', 38], ['Kashmiri', 5.5], ['Konkani', 5],
+          ['Maithili', 20], ['Malayalam', 33], ['Manipuri', 1.5],
+          ['Marathi', 72], ['Nepali', 2.9], ['Oriya', 33],
+          ['Punjabi', 29], ['Sanskrit', 0.01], ['Santhali', 6.5],
+          ['Sindhi', 2.5], ['Tamil', 61], ['Telugu', 74], ['Urdu', 52]
+        ]);
+
+        var options = {
+          title: 'Indian Language Use',
+          legend: 'none',
+          pieSliceText: 'label',
+          slices: {  4: {offset: 0.2},
+                    12: {offset: 0.3},
+                    14: {offset: 0.4},
+                    15: {offset: 0.5},
+          },
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        chart.draw(data, options);
+      }
+    </script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Pac Man', 'Percentage'],
+          ['', 75],
+          ['', 25]
+        ]);
+
+        var options = {
+          legend: 'none',
+          pieSliceText: 'none',
+          pieStartAngle: 135,
+          tooltip: { trigger: 'none' },
+          slices: {
+            0: { color: 'yellow' },
+            1: { color: 'transparent' }
+          }
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('pacman'));
+        chart.draw(data, options);
+      }
+    </script>
   </head>
   <body>
 
@@ -45,9 +197,12 @@ hello
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="/python">Python</a>
+              <a class="dropdown-item" href="/charts">Charts</a>
               <a class="dropdown-item" href="/javascript">Javascript</a>
+              <a class="dropdown-item" href="/charts">Charts</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="/">All</a>
+              <a class="dropdown-item" href="/charts">Charts</a>
             </div>
           </li>
         </ul>
@@ -56,5 +211,14 @@ hello
 
 
 <main role="main" class="container">
+  <div id="piechart" style="width: 900px; height: 500px;"></div>
+  <div id="piechart_3d" style="width: 900px; height: 500px;"></div>
+  <div id="donutchart" style="width: 900px; height: 500px;"></div>
+  <div id="piechart" style="width: 900px; height: 500px;"></div>
+  <div id="piechart" style="width: 900px; height: 500px;"></div>
+  <div id="pacman" style="width: 900px; height: 500px;"></div>
   </body>
 </html>
+    
+   
+     
